@@ -15,8 +15,8 @@ const tokens = {
     access_token:"ya29.a0AfB_byBeyQugrLvnIwOAT4vwddjAwcSLQ8If8iHk4rQotnQdXY-GPN_n40oLS0t7BwesTNV-Os0jHWXlkRDeYrYuTjTZA507npDnKaRpVqB2bu9zpNqpe--t-SMunutw2PyWqsdCeArwJurTGqemLlitFa5JL88q2_AYaCgYKASoSARMSFQGOcNnCS_MfDNoXH5REku0tmrgbDQ0171",
     refresh_token: "1//04fWd-5gOhpWiCgYIARAAGAQSNwF-L9Irg7TC24ptA9jOl4LSmTpvkA4-o28-8YM8iXwzSiI0TK9bGjBv_1x99nzxPq7FV7ubivs"
 }
-const CLIENT_ID = "525005874471-u0qigisa8ggi6sl9e64e7pa61b9bgi97.apps.googleusercontent.com";
-const CLIENT_SECRET = "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";
+const CLIENT_ID = "184764449055-vr6tnsbqedj2fhru6tf86feq75n6hep6.apps.googleusercontent.com";
+const CLIENT_SECRET = "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";
 const REDIRECT_URI = "https://developers.google.com/oauthplayground";
 const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
 oAuth2Client.setCredentials(tokens); 
