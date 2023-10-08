@@ -22,8 +22,8 @@ app.get("/thankyou", (req, res) => {
 let tokens;
 
 // OAuth2 credentials
-const CLIENT_ID = "525005874471-u0qigisa8ggi6sl9e64e7pa61b9bgi97.apps.googleusercontent.com";
-const CLIENT_SECRET = "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";
+const CLIENT_ID = "184764449055-vr6tnsbqedj2fhru6tf86feq75n6hep6.apps.googleusercontent.com";
+const CLIENT_SECRET = "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";
 const REDIRECT_URI = "https://developers.google.com/oauthplayground";
 
 // Load tokens from a file or initialize an empty object
