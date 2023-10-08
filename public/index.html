@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Homepage</title>
+    <!-- Add your CSS and JavaScript links here -->
+    <link rel="stylesheet" href="styles.css"> <!-- Replace with your CSS file path -->
+    <style>
+        /* Add CSS styles for the video section */
+        .video {
+            background-color:black; /* Set a background color for the video section */
+            height: 100vh; /* Set the video section height to 100% of viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video video {
+            width: 80%; /* Set the video width to 100% of its container */
+            height: auto; /* Allow the video to maintain its aspect ratio */
+            max-height: 80vh; /* Limit the maximum height of the video */
+        }
+
+        /* Additional CSS styles */
+        /* Customize these styles to your liking */
+        .contact-info li {
+            color: white;
+            font-weight: bold;
+        }
+
+        .contact-form label {
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Dropdown menu styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            color: white;
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+        }
+
+        .menu-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-links li {
+            margin-right: 20px;
+        }
+
+        .menu-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Dropdown menu styles when open */
+        .menu-open {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: flex;
+            }
+
+            .menu-links {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 55px;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                text-align: center;
+            }
+
+            .menu-links.active {
+                display: flex;
+            }
+
+            .menu-links li {
+                margin: 15px 0;
+            }
+        }
+    </style>
+    <header>
+        <div class="navbar">
+            <h1>SkyMagnetXplorers</h1>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="menu-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="project.html">Project Overview</a></li>
+                <li><a href="key.html">Drone Components</a></li>
+                <li><a href="simulations.html">Simulations</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <!-- Hero content goes here -->
+        <h2><strong>Welcome to Our Project Website</strong></h2>
+        <p>"Welcome to our website! We are thrilled to introduce you to our groundbreaking project, the 'Drone-based Intelligent Magnetic Sensing System and Metallic Anomaly Detection System.' Our mission is to redefine anomaly detection using cutting-edge drone technology and advanced sensors. Explore our project overview, discover key features, meet the talented team behind this innovation, and dive into interactive simulations to witness our technology in action. Join us on this exciting journey of exploration and innovation as we reshape the future of anomaly detection. We invite you to explore, learn, and be part of the transformation."</p>
+    </div>
+
+    <!-- Project Overview Section -->
+    <section class="project-overview" id="project-overview">
+        <!-- Project overview content goes here -->
+        <h2>Project Overview</h2>
+        <p>Our project aims to revolutionize anomaly detection using advanced drone technology and sensors...</p>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="key-features" id="key-features">
+        <!-- Key features content goes here -->
+        <h2>Key Features</h2>
+        <ul>
+            <li>High-precision magnetometer sensors</li>
+            <li>Real-time anomaly detection</li>
+            <li>Remote operation and data analysis</li>
+        </ul>
+    </section>
+
+    <!-- Simulations Section -->
+    <section class="simulations" id="simulations">
+        <!-- Simulations content goes here -->
+        <h2>Simulations</h2>
+        <p>Explore our interactive simulations to understand our technology in action.</p>
+        <button class="simulations-button" onclick="openSimulationsPage();">Show Simulations</button>
+        <div class="simulations-content" id="simulations-content">
+            <!-- Add your simulation content here -->
+            <p>This is a sample simulation content.</p>
+        </div>
+    </section>
+    
+    <script>
+        // JavaScript function to open the simulation page
+        function openSimulationsPage() {
+            // Change the window location to simulation.html
+            window.location.href = "simulations.html";
+        }
+    </script>
+    
+
+    <!-- Video Section -->
+    <section class="video" id="video">
+        <!-- Video content goes here -->
+        <video width="100%" height="auto" autoplay muted loop controls>
+            <source src="video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 style="color: white; font-weight: bold; text-align: center; font-size: 24px;">Contact Us</h2>
+                <p>If you have any questions or inquiries, feel free to get in touch with us. We're here to help!</p>
+                <ul>
+                    <li>Name: <a href="mailto:masoodhussainr8@gmail.com">masoodhussainr8@gmail.com</a></li>
+                    <li>Email: (91+)7093013502</li>
+                    <li>Description: VNRVJIET, Hyderabad</li>
+                </ul>
+            </div>
+            <div class="contact-form">
+                <h3>Send us a message:</h3>
+                <form action="/submit" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 SkyMagnetXplorers</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript to handle menu toggle -->
+    <script>
+        function toggleMenu() {
+            const menuLinks = document.querySelector('.menu-links');
+            menuLinks.classList.toggle('active');
+        }
+        <!-- JavaScript to handle menu toggle and smooth scrolling -->
+
+    </script>
+</body>
+</html>

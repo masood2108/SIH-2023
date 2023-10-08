@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Simulations</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            background-color: rgba(0, 5, 11, 0.7);
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            color: white;
+            font-size: 36px;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: hidden;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .navbar a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar .icon {
+            display: none;
+            cursor: pointer;
+            float: right;
+            padding: 15px 20px;
+        }
+
+        .navbar.responsive {
+            position: relative;
+        }
+
+        .navbar.responsive .icon {
+            display: block;
+        }
+
+        .navbar.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+
+        .simulations-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 auto;
+            max-width: 900px;
+        }
+
+        .simulation {
+            flex: 0 0 calc(50% - 20px); /* Two simulations per line */
+            margin-bottom: 20px;
+            margin-right: 20px; /* Add margin between simulations */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            animation: fadeIn 1s;
+        }
+
+        .simulation h2 {
+            color: white;
+        }
+
+        .simulation p {
+            color: white;
+        }
+
+        .simulation img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* New CSS styles for the magnetic field intensity simulation */
+        .simulation.magnetic-intensity {
+            flex-basis: 100%; /* Full width for this simulation */
+        }
+        #droneCanvas {
+            display: block;
+            margin: 0 auto;
+        }
+        footer {
+            text-align: center;
+            background-color: rgba(0, 5, 11, 0.7);
+            padding: 20px 0;
+            color: white;
+        }
+        .simulation drone-simulation {
+            text-align: center;
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Drone Simulations</h1>
+    </header>
+    <div class="navbar" id="myNavbar">
+        <a href="index.html">Home</a>
+        <a href="key.html">Drone Components</a>
+        <a href="project.html">Project Overview</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="simulations-container">
+        <div class="simulation">
+                <h2>Magnetic Flux Simulation</h2>
+                <p>
+                    In our magnetic flux simulation for drones, we delve into the fascinating world of electromagnetic fields. Using advanced mathematical models and simulations powered by MATLAB, we visualize the magnetic flux distribution around a drone. The resulting graph provides a captivating insight into the magnetic environment, with varying colors representing different levels of magnetic flux.
+                </p>
+                <p>
+                    As you explore the graph, you'll notice that areas shaded in blue indicate regions with lower magnetic flux intensity. These areas are where the drone experiences a relatively weaker magnetic field. In contrast, the vibrant purples on the graph highlight zones where the magnetic flux is at its peak, indicating stronger magnetic fields.
+                </p>
+                <p>
+                    This simulation not only offers a mesmerizing visual representation of magnetic flux but also serves as a crucial tool for drone engineers and enthusiasts. It helps in understanding and optimizing drone designs, ensuring that they operate efficiently and safely within various magnetic environments.
+                </p>
+                <img src="magneticflux.jpeg" alt="Magnetic Flux Visualization" width="100%" height="auto">
+            </div>
+            
+            <div class="simulation">
+                <h2>Drone Flight Path Planning</h2>
+                <p>Explore drone flight path planning using advanced algorithms.</p>
+                <p>
+                    "Our drone flight path planning simulation showcases the capabilities of modern drone technology. Using state-of-the-art path planning algorithms implemented in MATLAB, we demonstrate how drones can autonomously navigate through complex environments.
+    
+                    In this simulation, you can observe a drone's planned flight path as it avoids obstacles, optimizes routes, and reaches its destination. It's a glimpse into the future of autonomous drone operations and can be used for various applications such as surveillance, delivery, and more.
+    
+                    As you interact with the simulation, you'll gain insights into the intricate decision-making processes that drones undergo during their missions. It's a powerful tool for both drone enthusiasts and professionals looking to harness the full potential of unmanned aerial vehicles."
+    
+                    Customize this description to match the specifics of your drone flight path planning simulation.
+                </p>
+                <img src="droneflight.jpg" alt="Drone Flight Path Planning" width="100%" height="auto">
+            </div>
+    
+            
+            <div class="simulation">
+                <h2>Data Fusion and Analysis</h2>
+                <p>Experience the fusion of data from multiple drones and its analysis.</p>
+                <p>
+                    "Our data fusion and analysis simulation offer a deep dive into the world of drone data processing. By merging data from multiple drones and applying advanced analytical techniques using MATLAB, we demonstrate the power of collaborative drone missions.
+    
+                    In this simulation, you can explore the combined data streams from drones, visualize their synchronization, and witness the insights gained from the merged data. This capability has broad applications in fields like environmental monitoring, disaster response, and more.
+    
+                    As you interact with the simulation, you'll witness the synergy that arises from the collaboration of drones, providing comprehensive and actionable information. It's a valuable tool for researchers and professionals seeking to leverage multiple drones for enhanced data collection and analysis."
+    
+                    Tailor this description to match the specifics of your data fusion and analysis simulation.
+                </p>
+                <img src="datafusion.jpg" alt="Data Fusion and Analysis" width="100%" height="auto">
+            </div>
+            <div class="simulation">
+                <h2>Metallic Anomaly Detection</h2>
+                <p>Discover how drones can detect metallic anomalies using advanced sensors.</p>
+                <p>
+                    "Our metallic anomaly detection simulation showcases the cutting-edge capabilities of drones in identifying metallic objects or anomalies in various environments. Using state-of-the-art sensors and machine learning algorithms, we demonstrate how drones can be deployed for tasks like identifying buried metallic objects, detecting structural weaknesses in metallic structures, and more.
+    
+                    In this simulation, you can explore how drones navigate and use their sensors to detect metallic anomalies. Watch as they analyze the data and provide real-time feedback on the presence of metallic objects. This technology has applications in industries such as construction, archaeology, and infrastructure inspection.
+    
+                    As you interact with the simulation, you'll witness the potential of drones to enhance safety and efficiency in tasks related to metallic object detection. It's a valuable tool for professionals and researchers interested in the intersection of drones and materials inspection."
+    
+                    Customize this description to match the specifics of your metallic anomaly detection simulation.
+                </p>
+                <img src="metallic.jpg" alt="Metallic Anomaly Detection" width="100%" height="auto">
+            </div>
+        <div class="simulation magnetic-intensity">
+            <h2>Magnetic Field Intensity Simulation</h2>
+            <p>
+                Explore the simulation of magnetic field intensity around a drone. This simulation provides valuable insights into the variation of magnetic field strength in the drone's vicinity.
+            </p>
+            <p>
+                "Our magnetic field intensity simulation is designed to help you understand how magnetic field strength changes around a drone. By using state-of-the-art modeling and simulation techniques, we visualize the magnetic field intensity with color gradients. Areas with lower intensity are represented in blue, while areas with higher intensity are depicted in vibrant red and orange colors.
+            </p>
+            <p>
+                This simulation is essential for drone engineers and researchers to assess the impact of magnetic fields on drone components and systems. It aids in designing drones that can operate effectively even in environments with varying magnetic conditions.
+            </p>
+            <img src="magneticfield.jpg" alt="Magnetic Field Intensity Simulation" width="100%" height="auto">
+        </div>
+    </div>
+    <div class="simulation drone-simulation">
+        <h2>Drone Simulation</h2>
+        <p>Experience an interactive drone simulation. Use arrow keys to control the drone's movement.</p>
+        <div id="droneCanvas"></div>
+    </div>
+    <footer>
+        &copy; 2023 Drone Simulations
+    </footer>
+    <script>
+        // JavaScript function to toggle the responsive navigation menu
+        function toggleNavbar() {
+            const navbar = document.getElementById("myNavbar");
+            if (navbar.className === "navbar") {
+                navbar.className += " responsive";
+            } else {
+                navbar.className = "navbar";
+            }
+        }
+        </script>
+         <script>
+ let droneX;
+        let droneY;
+        let droneSpeed = 3;
+
+        function setup() {
+            const canvas = createCanvas(windowWidth, windowHeight);
+            canvas.parent("droneCanvas"); // Attach canvas to the droneCanvas div
+            droneX = width / 2;
+            droneY = height / 2;
+        }
+
+        function draw() {
+            background(0);
+
+            // Control the drone with arrow keys
+            if (keyIsDown(LEFT_ARROW)) {
+                droneX -= droneSpeed;
+            }
+            if (keyIsDown(RIGHT_ARROW)) {
+                droneX += droneSpeed;
+            }
+            if (keyIsDown(UP_ARROW)) {
+                droneY -= droneSpeed;
+            }
+            if (keyIsDown(DOWN_ARROW)) {
+                droneY += droneSpeed;
+            }
+
+            // Draw the drone
+            fill(0, 255, 0); // Green color
+            rect(droneX - 20, droneY - 10, 40, 20);
+            fill(255, 0, 0); // Red color
+            ellipse(droneX, droneY, 20, 20);
+
+            // Ensure the drone stays within the canvas boundaries
+            droneX = constrain(droneX, 10, width - 10);
+            droneY = constrain(droneY, 10, height - 10);
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+
+        // JavaScript function to toggle the responsive navigation menu
+        function toggleNavbar() {
+            const navbar = document.getElementById("myNavbar");
+            if (navbar.className === "navbar") {
+                navbar.className += " responsive";
+            } else {
+                navbar.className = "navbar";
+            }
+        }
+       </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Components</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('3ddrone.jpg'); /* Set your drone image as the background */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: white; /* Set the font color to white */
+        }
+
+        header {
+            text-align: center;
+            background-color: rgba(0, 5, 11, 0.7);
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            color: white;
+            font-size: 36px;
+        }
+
+        .components-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .component {
+            text-align: center;
+            border: 1px solid #ddd;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out;
+            overflow: hidden;
+            max-width: 300px;
+            margin: 10px;
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .component:hover {
+            transform: scale(1.05);
+        }
+
+        .component img {
+            max-width: 100%;
+            height: auto;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .component:hover img {
+            opacity: 0.9;
+        }
+
+        .component-description {
+            padding: 20px;
+        }
+
+        .component-description p {
+            font-weight: bold;
+            color: #333;
+        }
+      /* Navigation bar styles */
+      .navbar {
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: hidden;
+            padding: 20px 0;
+            text-align: center; /* Center-align the text within the navbar */
+        }
+
+        .navbar a {
+            display: inline-block; /* Display links as blocks to center-align */
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Hamburger icon for small screens */
+        .navbar .icon {
+            display: none;
+            cursor: pointer;
+            float: right;
+            padding: 15px 20px;
+        }
+
+        /* Responsive navigation menu */
+        .navbar.responsive {
+            position: relative;
+        }
+
+        .navbar.responsive .icon {
+            display: block;
+        }
+
+        .navbar.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Drone Components</h1>
+    </header>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="simulation.html">Drone Simulations</a>
+        <a href="project.html">Project Overview</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="components-container">
+        <div class="component">
+            <img src="magnetometer1.jpeg" alt="Magnetometer">
+            <div class="component-description">
+                <p>A magnetometer is used for measuring magnetic fields. It helps drones navigate accurately.</p>
+            </div>
+        </div>
+        <div class="component">
+            <img src="gps.jpeg" alt="GPS Module">
+            <div class="component-description">
+                <p>A GPS module provides location data for drones, enabling precise positioning.</p>
+            </div>
+        </div>
+        <div class="component">
+            <img src="LIDAR-Laser-Distance-Sensor_700x.jpeg" alt="LiDAR">
+            <div class="component-description">
+                <p>LiDAR is used for accurate distance measurement and obstacle detection in drones.</p>
+            </div>
+        </div>
+        <div class="component">
+            <img src="pixhk.jpg" alt="Pixhawk Flight Controller">
+            <div class="component-description">
+                <p>Pixhawk Flight Controller is a popular drone control system.</p>
+            </div>
+        </div>
+        <div class="component">
+            <img src="accelo.jpg" alt="Accelerometer">
+            <div class="component-description">
+                <p>An accelerometer measures acceleration for drone stability.</p>
+            </div>
+        </div>
+        <div class="component">
+            <img src="baro.jpg" alt="Barometer">
+            <div class="component-description">
+                <p>A barometer measures atmospheric pressure for altitude control.</p>
+            </div>
+        </div>
+        <div class="component">
+            <img src="gyro.jpg" alt="Gyroscope">
+            <div class="component-description">
+                <p>A gyroscope helps in maintaining drone orientation.</p>
+            </div>
+        </div>
+        <script>
+            <a href="#" id="back-to-top" style="display: none;">Back to Top</a>
+            // JavaScript function to toggle the responsive navigation menu
+            function toggleNavbar() {
+                const navbar = document.getElementById("myNavbar");
+                if (navbar.className === "navbar") {
+                    navbar.className += " responsive";
+                } else {
+                    navbar.className = "navbar";
+                }
+            }
+            const navLinks = document.querySelectorAll(".navbar a");
+    navLinks.forEach((link) => {
+        link.addEventListener("click", smoothScroll);
+    });
+
+    function smoothScroll(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+        window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: "smooth",
+        });
+        const backToTopButton = document.getElementById("back-to-top");
+    window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    });
+
+    backToTopButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
+    }
+     </script>
+    </div>
+</body>
+</html>
