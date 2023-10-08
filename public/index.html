@@ -196,7 +196,7 @@
             </div>
             <div class="contact-form">
                 <h3>Send us a message:</h3>
-                <form action="/submit" method="POST">
+                <form action="thankyou.html" method="POST">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
                     
@@ -211,6 +211,19 @@
             </div>
         </div>
     </section>
+    <script>
+        function sendMessage() {
+            // Get the values from the form fields
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            // You can perform form validation here if needed
+
+            // Redirect to the thankyou.html page
+            window.location.href = "thankyou.html";
+        }
+    </script>
 
     <!-- Footer Section -->
     <footer>
